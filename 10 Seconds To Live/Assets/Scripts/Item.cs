@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
+
+        CountItems();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        gameManager.IncrementScore();
+        Destroy(gameObject);
+    }
+
+    private void CountItems()
+    {
+        if(tag == "item")
+        {
+            gameManager.CountItems();
+        }
     }
 }
