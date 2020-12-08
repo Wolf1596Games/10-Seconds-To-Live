@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] int totalItems;
-    [SerializeField] int score;
+    [SerializeField] public int totalItems;
+    [SerializeField] public int score;
 
     public static GameManager instance;
 
@@ -30,11 +30,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void LoadGameOver()
-    {
-        SceneManager.LoadScene("GameOver");
     }
 
     public void CountItems()
